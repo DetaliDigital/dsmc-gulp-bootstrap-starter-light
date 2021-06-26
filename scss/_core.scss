@@ -1,0 +1,8 @@
+//Import theme components
+
+// custom variables + overrides of Bootstrap variables for this theme
+@import "theme/variables";
+// bootstrap >> bootstrap-grid
+@import "scss/bootstrap/bootstrap-grid";
+// theme components
+@import "theme/theme";

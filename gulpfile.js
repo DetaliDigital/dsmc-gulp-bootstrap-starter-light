@@ -16,7 +16,7 @@ let changed = require('gulp-changed'),
     notify = require('gulp-notify');
 
 const srcLayoutFiles = 'src/*.html'
-const srcSassFiles = 'scss/style.default.scss'
+const srcSassFiles = 'scss/theme.bs.slim.default.scss'
 
 const distAppDir = 'dist/'
 const distStyleDir = 'dist/css/'
@@ -47,7 +47,7 @@ gulp.task('clean', function () {
 // Copy folder src >> dist
 
 gulp.task('copy', function () {
-    return getFoldersSrc('scss', copy)
+    return getFoldersSrc('src', copy)
         .pipe(changed(distAppDir))
         .pipe(gulp.dest(distAppDir));
 

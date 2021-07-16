@@ -1,0 +1,25 @@
+.badge {
+  color: #B19B7A;
+  background-color: #FEFBEB;
+  padding: $product-spacer-y / 2 $product-spacer-x / 2;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 90px;
+  &.badge-danger {
+    background-color: #FB005A;
+    color: #ffffff;
+  }
+  &.badge-secondary {
+    background-color: #606060;
+    color: #ffffff;
+  }
+  &.badge-warning {
+    background-color: #FF9C40;
+    color: #ffffff;
+  }
+  &.badge-success {
+    background-color: #7EC50B;
+    color: #ffffff;
+  }
+}
+

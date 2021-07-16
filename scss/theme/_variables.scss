@@ -1,0 +1,12 @@
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px
+) !default;
+
+$product-spacer-y:                     .75rem !default;
+$product-spacer-x:                     1.25rem !default;
+$product-border-width:                 1px !default;
+$product-border-color:                 #E5ECF4 !default;

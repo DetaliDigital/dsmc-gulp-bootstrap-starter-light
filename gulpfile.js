@@ -21,10 +21,11 @@ const srcSassFiles = 'scss/theme.bs.slim.default.scss'
 const distAppDir = 'dist/'
 const distStyleDir = 'dist/css/'
 const distVendorDir = 'dist/vendor/'
+
 const moduleBootstrapSass = 'node_modules/bootstrap/scss/**'
 const srcSassBootstrap = 'scss/bootstrap/'
 
-const copy = ['js/**', 'img/**', 'fonts/**', 'css/custom.css', 'icons/**', 'docs/**']
+const copy = ['js/**', 'img/**', 'fonts/**', 'vendor/bootstrap-input-spinner/src/**', 'css/custom.css', 'icons/**', 'docs/**']
 
 const config = {
     autoprefixer: {
@@ -69,6 +70,18 @@ gulp.task('bootstrap', function () {
         .pipe(gulp.dest(srcSassBootstrap))
 });
 
+gulp.task('vendor', function () {
+    return gulp.src(npmDist({
+        copyUnminified: true
+    }), {
+        base: './node_modules/'
+    })
+        .pipe(rename(function (path) {
+            path.dirname = path.dirname.replace(/\/distribute/, '').replace(/\\distribute/, '').replace(/\/dist/, '').replace(/\\dist/, '');
+        }))
+        .pipe(gulp.dest(distVendorDir));
+});
+
 // Dev SASS Task - no sourcemaps, no autoprefixing, no minification
 gulp.task('sass-dev', function () {
 
@@ -100,7 +113,7 @@ gulp.task('sass-build', function () {
 gulp.task('build',
     gulp.series(
         'clean',
-        gulp.parallel('html', 'sass-build', 'copy')
+        gulp.parallel('html', 'vendor', 'sass-build', 'copy')
 ));
 
 // Helper functions
@@ -121,6 +134,23 @@ function serve(done) {
     });
     done();
 }
+
+function watch(done) {
+
+    gulp.watch("scss/**/*.scss", gulp.series('sass-dev'));
+    gulp.watch("pages/*.html", gulp.series('html', reload));
+    gulp.watch(getFolders('pages', copy), gulp.series('copy', reload));
+
+    console.log(chalk.yellow('Now watching files for changes...'));
+
+    done();
+}
+
+function getFolders(base, folders) {
+    return folders.map(function (item) {
+        return path.join(base, item);
+    });
+};
 
 function getFoldersSrc(base, folders) {
     return gulp.src(folders.map(function (item) {

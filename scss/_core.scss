@@ -1,6 +1,17 @@
 //Import theme components
+@import "bootstrap/functions";
+@import "bootstrap/mixins";
+
 
 // custom variables + overrides of Bootstrap variables for this theme
+
 @import "theme/variables";
 // theme components
 @import "theme/theme";
+
+@import "bootstrap/variables";
+@import "bootstrap/modal";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/utilities";
+@import "bootstrap/custom-forms";

@@ -12,13 +12,15 @@
     "Oleg Shchabelev <oleg@dsmc.agency>"
   ],
   "dependencies": {
-    "bootstrap": "^4.6.0"
+    "bootstrap": "^4.6.0",
+    "bootstrap-input-spinner": "^3.0.2",
+    "jquery.spinner": "^0.2.1",
+    "maska": "^1.4.4"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "chalk": "^2.4.2",
     "del": "^3.0.0",
-    "sass" : "1.32.13",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-cdnizer": "^2.2.0",
@@ -28,6 +30,7 @@
     "gulp-npm-dist": "^1.0.3",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "^3.0.0"
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "1.32.13"
   }
 }

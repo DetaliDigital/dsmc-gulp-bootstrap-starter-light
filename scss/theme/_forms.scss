@@ -1,18 +1,22 @@
 .product-card-count-group {
   position: relative;
-  .count-minus,
-  .count-plus {
+
+  .btn-minus,
+  .btn-plus {
     display: flex;
     position: absolute;
     top: calc(50% - 8px);
     width: 1rem;
     height: 1rem;
+    padding: 0;
     background-color: #E5ECF4;
-    border-radius: 50%;
+    border-radius: $border-radius-lg;
     cursor: pointer;
   }
-  .count-minus {
+
+  .btn-minus {
     left: .75rem;
+
     &::after {
       content: '';
       background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.674133 1.30469V0.117188H4.51007V1.30469H0.674133Z' fill='%2390A9C5'/%3E%3C/svg%3E%0A");
@@ -26,8 +30,10 @@
       left: calc(50% - 2px);
     }
   }
-  .count-plus {
+
+  .btn-plus {
     right: .75rem;
+
     &::after {
       content: '';
       background-image: url("data:image/svg+xml,%3Csvg width='7' height='7' viewBox='0 0 7 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.14502 2.979H6.76025V3.85498H4.14502V6.55908H3.2627V3.85498H0.660156V2.979H3.2627V0.262207H4.14502V2.979Z' fill='%2390A9C5'/%3E%3C/svg%3E%0A");
@@ -37,5 +43,47 @@
       top: calc(50% - 3px);
       left: calc(50% - 3px);
     }
+  }
+}
+
+.form-text {
+  display: block;
+  font-size: 11px;
+}
+
+.form-group {
+  > label {
+    display: inline-block;
+    margin-bottom: $label-margin-bottom;
+    font-size: 13px;
+    color: #656565;
+  }
+
+  .custom-control {
+    .custom-control-input {
+      margin-right: .5rem;
+      box-sizing: border-box; // 1. Add the correct box sizing in IE 10-
+      padding: 0; // 2. Remove the padding in IE 10-
+    }
+
+    .custom-control-label {
+      font-size: 13px;
+      margin-bottom: 0;
+      &::before,
+      &::after {
+        box-sizing: border-box; // 1
+      }
+      a {
+        color: #e9df39;
+        &:hover {
+        }
+      }
+    }
+  }
+}
+
+.form-control {
+  &.rounded-lg {
+    border-radius: 50px;
   }
 }

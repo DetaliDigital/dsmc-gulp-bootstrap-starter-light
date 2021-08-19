@@ -159,6 +159,14 @@ $grid-breakpoints: (
         xl: 1200px
 ) !default;
 
+// Grid columns
+//
+// Set the number of columns and specify the width of the gutters.
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
+$grid-row-columns:            6 !default;
+
 $product-spacer-y:                     .75rem !default;
 $product-spacer-x:                     1.25rem !default;
 $product-border-width:                 1px !default;
@@ -246,6 +254,29 @@ $input-border-radius:                   $border-radius !default;
 $input-border-radius-lg:                $border-radius-sm !default;
 $input-border-radius-sm:                $border-radius-sm !default;
 
+// Cards
+
+$card-spacer-y:                     .75rem !default;
+$card-spacer-x:                     1.25rem !default;
+$card-border-width:                 $border-width !default;
+$card-border-radius:                $border-radius !default;
+$card-border-color:                 transparent !default;
+$card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
+$card-cap-bg:                       $white !default;
+$card-cap-color:                    null !default;
+$card-height:                       null !default;
+$card-color:                        null !default;
+$card-bg:                           $white !default;
+
+$card-img-overlay-padding:          1.25rem !default;
+
+$card-group-margin:                 $grid-gutter-width / 2 !default;
+$card-deck-margin:                  $card-group-margin !default;
+
+$card-columns-count:                3 !default;
+$card-columns-gap:                  1.25rem !default;
+$card-columns-margin:               $card-spacer-y !default;
+
 // Modals
 
 // Padding applied to the modal body
@@ -293,6 +324,8 @@ $modal-show-transform:              none !default;
 $modal-transition:                  transform .3s ease-out !default;
 $modal-scale-transform:             scale(1.02) !default;
 
+
+
 // Tables
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
@@ -327,3 +360,4 @@ $table-caption-color:         $text-muted !default;
 
 $table-bg-level:              -9 !default;
 $table-border-level:          -6 !default;
+

@@ -35,3 +35,9 @@
     margin: 0 -1px -1px 0;
   }
 }
+
+@include media-breakpoint-down(md) {
+  .grid-item {
+    margin: -1px 0 0 -1px;
+  }
+}
